@@ -331,6 +331,20 @@
         "url": "https://raw.githubusercontent.com/neoz/Root-My-Galaxy-Payloads/main/kernelsu/ksud-e3q-S9280ZCS6DZF2-kdp",
         "size": 4879856
       }
+    },
+    {
+      "payloadId": "a33x-A336EDXSFGYL1",
+      "displayName": "Galaxy A33 5G | Kernel 5.10.237",
+      "models": ["SM-A336E"],
+      "kernelVersions": ["5.10.237"],
+      "exploit": {
+        "url": "https://raw.githubusercontent.com/neoz/Root-My-Galaxy-Payloads/main/artifacts/a33x-A336EDXSFGYL1/cve-2026-43499-app.so",
+        "size": 104128
+      },
+      "kernelsu": {
+        "url": "https://raw.githubusercontent.com/neoz/Root-My-Galaxy-Payloads/main/kernelsu/ksud-A536EXXSNGZG3-kdp",
+        "size": 4870752
+      }
     }
   ]
 }
