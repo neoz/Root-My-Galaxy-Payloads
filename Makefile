@@ -18,7 +18,7 @@ endif
 ifeq ($(TARGET),gts9-X710XXS6EZF1)
 APP_TARGET_CFLAGS := -DSLIDE_STACK_WRITER=1
 endif
-ifeq ($(TARGET),a53x-A536EXXSNGZG3)
+ifneq ($(filter a53x-A536EXXSNGZG3 a33x-A336EDXSFGYL1,$(TARGET)),)
 API := 31
 endif
 
@@ -63,12 +63,12 @@ APP_PRELOAD_SRCS := \
   src/root.c \
   src/preload.c
 
-ifeq ($(TARGET),a53x-A536EXXSNGZG3)
+ifneq ($(filter a53x-A536EXXSNGZG3 a33x-A336EDXSFGYL1,$(TARGET)),)
 APP_PRELOAD_SRCS := \
-  src/targets/a53x-A536EXXSNGZG3/payload.c \
-  src/targets/a53x-A536EXXSNGZG3/chain.c \
-  src/targets/a53x-A536EXXSNGZG3/ghostlock.c \
-  src/targets/a53x-A536EXXSNGZG3/page.c
+  src/targets/$(TARGET)/payload.c \
+  src/targets/$(TARGET)/chain.c \
+  src/targets/$(TARGET)/ghostlock.c \
+  src/targets/$(TARGET)/page.c
 PRELOAD_SRCS := $(APP_PRELOAD_SRCS)
 APP_RELEASE_OPT := -O2
 APP_RELEASE_LINK_FLAGS := -Wl,--gc-sections -Wl,--icf=all -s

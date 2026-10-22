@@ -26,6 +26,7 @@ It intentionally does not contain Android application source code.
 | `q4q-F9360ZCSAIZF1` | Galaxy Z Fold4 `SM-F9360` | `5.10.236` | Device-tested |
 | `dm2q-S916BXXSAFZG1` | Galaxy S23+ `SM-S916B` | `5.15.189` | Experimental: hardware root from ADB shell; not in app feed |
 | `dm3q-S918BXXSAFZF5` | Galaxy S23 Ultra `SM-S918B` | `5.15.189` | Confirmed working: full chain through the app (Shizuku mode) incl. KernelSU late-load and granted `su` |
+| `a33x-A336EDXSFGYL1` | Galaxy A33 5G `SM-A336E` | `5.10.237` | Ported and building; hardware validation in progress (not in app feed) |
 
 The S916B FZG1 profile is shell-only today. Its exact tracefs route works from `adb shell`, but direct app-domain execution is not supported. Root My Galaxy would need to delegate the native runner through an authorized shell bridge such as Shizuku. See [`artifacts/dm2q-S916BXXSAFZG1/README.md`](artifacts/dm2q-S916BXXSAFZG1/README.md).
 
@@ -60,6 +61,7 @@ make TARGET=a53x-A536EXXSNGZG3 ANDROID_NDK_HOME=/path/to/android-ndk
 make TARGET=dm3q-S9180ZHS8FZF5 ANDROID_NDK_HOME=/path/to/android-ndk
 make TARGET=q4q-F9360ZCSAIZF1 ANDROID_NDK_HOME=/path/to/android-ndk
 make TARGET=dm2q-S916BXXSAFZG1 ANDROID_NDK_HOME=/path/to/android-ndk
+make TARGET=a33x-A336EDXSFGYL1 ANDROID_NDK_HOME=/path/to/android-ndk
 ```
 
 Outputs:
@@ -97,6 +99,8 @@ The SM-F9360 AIZF1 (5.10, locked-BL, no-LTO clang-12 module) validation is in
 The experimental SM-S916B FZG1 shell port and its exact hardware evidence are in [`docs/SM-S916B-S916BXXSAFZG1.md`](docs/SM-S916B-S916BXXSAFZG1.md).
 The SM-A536E GZG3 device validation is in
 [`docs/SM-A536E-A536EXXSNGZG3.md`](docs/SM-A536E-A536EXXSNGZG3.md).
+The SM-A336E FGYL1 port record (no-BTF 5.10, derived layouts, KASLR detector
+change) is in [`docs/SM-A336E-A336EDXSFGYL1.md`](docs/SM-A336E-A336EDXSFGYL1.md).
 The SM-S9280 China (CHC) DZF2 port and validation record is in
 [`docs/SM-S9280-S9280ZCS6DZF2.md`](docs/SM-S9280-S9280ZCS6DZF2.md).
 
